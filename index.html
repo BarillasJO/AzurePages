@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VitaFlex Authentication</title>
+    <title>Sign In - VitaFlex</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,27 +23,23 @@
         h2 {
             color: #333;
         }
-        a {
-            display: block;
-            padding: 10px;
-            margin: 10px 0;
-            text-decoration: none;
-            background: #0078D4;
-            color: white;
-            border-radius: 5px;
-        }
-        a:hover {
-            background: #005ea6;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Welcome to VitaFlex</h2>
-        <p>Choose an option to continue:</p>
-        <a href="signin.html">Sign In</a>
-        <a href="signup.html">Sign Up</a>
-        <a href="forgot-password.html">Forgot Password?</a>
+        <h2>Sign In to VitaFlex</h2>
+        <div id="api"></div>  <!-- REQUIRED FOR AZURE B2C TO INJECT UI -->
     </div>
+
+    <script>
+        // Ensures Azure B2C injects the sign-in form
+        function run() {
+            const apiElement = document.getElementById("api");
+            if (apiElement) {
+                apiElement.innerHTML = '<div id="api">Loading...</div>';
+            }
+        }
+        run();
+    </script>
 </body>
 </html>

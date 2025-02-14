@@ -4,36 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - VitaFlex</title>
-    <link rel="stylesheet" href="https://barillasjo.github.io/AzurePages/styles.css">
 
     <style>
         body {
+            background-color: gray;
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f4f4f4;
             margin: 0;
             padding: 50px;
         }
-        .container {
-            background: gray;
-            padding: 20px;
-            border-radius: 10px;
-            width: 350px;
-            margin: auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="api"></div>  <!-- REQUIRED FOR AZURE B2C TO INJECT UI -->
+    <div>
+        <div id="api"></div>  
     </div>
 
     <script>
-        // Ensures Azure B2C injects the sign-in form
+ 
         function run() {
             const apiElement = document.getElementById("api");
             if (apiElement) {
@@ -46,7 +35,6 @@
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
-            // Detect if the user is on the Sign-Up page
             const isSignUp = window.location.href.includes("local=signup") || document.querySelector("input[name='newPassword']");
 
             if (isSignUp) {

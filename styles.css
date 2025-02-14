@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Centered Container */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h2 {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Forms */
+form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* Input Fields */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #005ea6;
+}
+
+/* Error Messages */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Link Styling */
+a {
+    color: #0078D4;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Remember Me Checkbox */
+.rememberMe {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
+}
+
+.rememberMe input {
+    margin-right: 5px;
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.divider h2 {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Sign-Up Specific Styles */
+body.signup-mode {
+    background-color: #e3f2fd;
+}
+
+body.signup-mode h1 {
+    color: #0078D4;
+}
+
+body.signup-mode input {
+    border-color: #0078D4;
+}
+
+body.signup-mode button {
+    background-color: #0078D4;
+}
+
+.signup-mode .signin-only {
+    display: none;
+}
+
+.signin-mode .signup-only {
+    display: none;
+}

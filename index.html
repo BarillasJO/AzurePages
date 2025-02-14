@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - VitaFlex</title>
+    <link rel="stylesheet" href="https://barillasjo.github.io/AzurePages/styles.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,5 +43,22 @@
         }
         run();
     </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        const isSignUp = document.querySelector("input[name='newPassword']");
+        
+        if (isSignUp) {
+            document.body.classList.add("signup-mode");
+            document.body.classList.remove("signin-mode");
+        } else {
+            document.body.classList.add("signin-mode");
+            document.body.classList.remove("signup-mode");
+        }
+    }, 500);
+});
+</script>
+
 </body>
 </html>

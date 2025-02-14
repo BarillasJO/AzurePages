@@ -5,46 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - VitaFlex</title>
 
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css">
+
     <style>
         body {
-            background-color: gray;
+            background-color: gray; 
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0078D4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #005ea6;
         }
     </style>
 </head>
 <body>
-    <div>
-        <div id="api"></div>  
+    <div class="container">
+        <div id="api"></div> 
     </div>
 
     <script>
- 
-        function run() {
-            const apiElement = document.getElementById("api");
-            if (apiElement) {
-                apiElement.innerHTML = '<div id="api">Loading...</div>';
-            }
+    function waitForB2CForm() {
+        const givenNameInput = document.getElementById("givenName");
+        const surNameInput = document.getElementById("surName");
+        const displayNameInput = document.getElementById("displayName");
+
+        if (givenNameInput || surNameInput || displayNameInput) {
+
+            if (givenNameInput) givenNameInput.placeholder = "First Name";
+            if (surNameInput) surNameInput.placeholder = "Last Name";
+            if (displayNameInput) displayNameInput.placeholder = "User Name";
+        } else {
+
+            setTimeout(waitForB2CForm, 500);
         }
-        run();
-    </script>
+    }
 
-    <script>
     document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(() => {
-            const isSignUp = window.location.href.includes("local=signup") || document.querySelector("input[name='newPassword']");
-
-            if (isSignUp) {
-                document.body.classList.add("signup-mode");
-                document.body.classList.remove("signin-mode");
-            } else {
-                document.body.classList.add("signin-mode");
-                document.body.classList.remove("signup-mode");
-            }
-        }, 500);
+        setTimeout(waitForB2CForm, 1000); 
     });
     </script>
 

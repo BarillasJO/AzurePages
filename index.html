@@ -44,20 +44,21 @@
     </script>
 
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(() => {
-        const isSignUp = document.querySelector("input[name='newPassword']");
-        
-        if (isSignUp) {
-            document.body.classList.add("signup-mode");
-            document.body.classList.remove("signin-mode");
-        } else {
-            document.body.classList.add("signin-mode");
-            document.body.classList.remove("signup-mode");
-        }
-    }, 500);
-});
-</script>
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+            // Detect if the user is on the Sign-Up page
+            const isSignUp = window.location.href.includes("local=signup") || document.querySelector("input[name='newPassword']");
+
+            if (isSignUp) {
+                document.body.classList.add("signup-mode");
+                document.body.classList.remove("signin-mode");
+            } else {
+                document.body.classList.add("signin-mode");
+                document.body.classList.remove("signup-mode");
+            }
+        }, 500);
+    });
+    </script>
 
 </body>
 </html>

@@ -6,75 +6,41 @@
     <title>Sign In - VitaFlex</title>
 
     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css">
-
+    
     <style>
         body {
-            background-color: gray; 
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 50px;
-        }
-
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 400px;
-            margin: auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #0078D4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background-color: #005ea6;
+            background-color: gray;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="api"></div> 
-    </div>
+    <div id="api"></div>
 
     <script>
     function waitForB2CForm() {
         const givenNameInput = document.getElementById("givenName");
         const surNameInput = document.getElementById("surName");
         const displayNameInput = document.getElementById("displayName");
+        const cancelButton = document.getElementById("cancel");
 
-        if (givenNameInput || surNameInput || displayNameInput) {
-
+        if (givenNameInput || surNameInput || displayNameInput || cancelButton) {
             if (givenNameInput) givenNameInput.placeholder = "First Name";
             if (surNameInput) surNameInput.placeholder = "Last Name";
             if (displayNameInput) displayNameInput.placeholder = "User Name";
-        } else {
 
+            if (cancelButton) {
+                cancelButton.onclick = function(event) {
+                    event.preventDefault();
+                    window.location.href = window.location.origin + window.location.pathname;
+                };
+            }
+        } else {
             setTimeout(waitForB2CForm, 500);
         }
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(waitForB2CForm, 1000); 
+        setTimeout(waitForB2CForm, 1000);
     });
     </script>
 

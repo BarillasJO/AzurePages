@@ -125,3 +125,14 @@ body.signup-mode button {
 .signin-mode .signup-only {
     display: none;
 }
+
+.signin-mode h1 {
+    color: #0078D4;
+}
+
+.signin-mode .intro h2 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #555;
+    content: "Sign in to your profile";
+}
